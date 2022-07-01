@@ -1,4 +1,4 @@
-const carousel= document.querySelector('.carousel');
+const carous= document.querySelector('.carousel');
 let sliders = [];
 
 let slideIndex = 0;
@@ -24,7 +24,7 @@ const createSlide = () =>{
     content.appendChild(p);
     slide.appendChild(content);
     slide.appendChild(imgElement);
-    carousel.appendChild(slide);
+    carous.appendChild(slide);
     
     // setting up image
     imgElement.src = movies[slideIndex].image;
@@ -48,10 +48,9 @@ const createSlide = () =>{
 for (let i = 0; i < 3;i++){
     createSlide();
 }
- 
 setInterval(() => {
     createSlide();
-}, 3000);
+}, 5000);
 
 // video cards
 
@@ -67,6 +66,71 @@ videoCards.forEach(item=> {
         video.pause();
     })
 })
+
+// cards
+const moviesList = document.querySelector('.movies-list');
+
+let nxtButton = document.createElement('button');
+let preButton = document.createElement('button');
+let imgPreBtn = document.createElement('img');
+let imgNxtBtn = document.createElement('img');
+imgPreBtn.src="images/pre.png";
+imgNxtBtn.src="images/nxt.png";
+
+nxtButton.appendChild(imgNxtBtn);
+preButton.appendChild(imgPreBtn);
+
+nxtButton.className = 'nxt-btn';
+preButton.className = 'pre-btn';
+
+let cardContainerDiv = document.createElement('div');
+
+for (let cardIndex = 0; cardIndex < cardList.length; cardIndex++){
+
+let cardDiv = document.createElement('div');
+let imgCard = document.createElement('img');
+let buttonLink = document.createElement('a');
+
+let cardBodyDiv = document.createElement('div');
+let nameContent = document.createElement('h2');
+let desContent = document.createElement('h6');
+let watchButton = document.createElement('button');
+watchButton.appendChild(document.createTextNode('Aperçu'));
+
+imgCard.className ='card-img';
+//watchButton.className = 'watchlist-btn';
+nameContent.className = 'name';
+desContent.className = 'des';
+cardBodyDiv.className = 'card-body';
+cardDiv.className = 'card';
+
+
+nameContent.appendChild(document.createTextNode(cardList[cardIndex].name));
+desContent.appendChild(document.createTextNode(cardList[cardIndex].des));
+imgCard.src = cardList[cardIndex].image;
+buttonLink.href = cardList[cardIndex].video;
+
+//buttonLink.appendChild(watchButton);
+//cardBodyDiv.appendChild(nameContent);
+//cardBodyDiv.appendChild(desContent);
+//cardBodyDiv.appendChild(buttonLink);
+
+buttonLink.appendChild(imgCard);
+cardDiv.appendChild(buttonLink);
+
+//cardDiv.appendChild(imgCard);
+//cardDiv.appendChild(cardBodyDiv);
+
+cardContainerDiv.appendChild(cardDiv);
+
+}
+
+cardContainerDiv.className = 'card-container';
+
+moviesList.appendChild(preButton);
+moviesList.appendChild(nxtButton);
+moviesList.appendChild(cardContainerDiv);
+
 
 // card sliders
 

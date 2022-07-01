@@ -24,7 +24,8 @@
   }
 
   .brand-logo{
-    height: 70px;
+    height: 80px;
+    padding-bottom: 8px;
   }
 
   .nav-links{
@@ -120,7 +121,7 @@
   }
 
   .slider img{
-    width: 70%;
+    width: 50%;
     min-height: 100%;
     object-fit: cover;
     display: block;
@@ -129,7 +130,7 @@
 
   .slide-content{
     position: absolute;
-    width: 50%;
+    width: 70%;
     height: 100%;
     z-index: 2;
     background: linear-gradient(to right, #030b17 80%, #0c111b00);
@@ -205,7 +206,7 @@
 
  .card-container{
     position: absolute;
-    width: 92%;
+    width: 100%;
     padding-left: 4%;
     height: 220px;
     display: flex;
@@ -309,7 +310,7 @@
   .nxt-btn{
     position: absolute;
     top: 0;
-    width: 5%;
+    width: 4%;
     height: 100%;
     z-index: 2;
     border: none;
@@ -337,4 +338,8 @@
   .pre-btn:hover img,
   .nxt-btn:hover img{
     opacity: 1;
+  }
+
+  .white, .white a {
+    color: #fff;
   }
