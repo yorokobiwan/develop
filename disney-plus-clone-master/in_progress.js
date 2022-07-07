@@ -5,6 +5,9 @@
 // modéliser la bd
 // lister l'existant avec un fichier excel qui créera la requete d'insert
 //
+
+//make restfull en node js
+
 ------
 t_item
 itm_id  int auto increment
@@ -86,3 +89,8 @@ creator
 editeur
 auteur
 artiste
+
+poster_ 
+slide_
+trailer_ 
+
