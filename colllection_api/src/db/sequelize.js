@@ -1,9 +1,9 @@
-const { success, getUniqueId } = require('./helper.js')
-let items = require('./mock-list')
+//const { success, getUniqueId } = require('./helper.js')
+//let items = require('./mock-list')
 const ItemModel = require('./src/models/item')
 
-const sequelize = new Sequelize('collection', 'root', 'password', {
-        host: 'localhost',
+const sequelize = new Sequelize('collection', 'user', 'colector', {
+        host: '192.168.1.50.3306',
         dialect: 'mariadb',
         dialectOptions: {
             timezone: 'Etc/GMT-2'
@@ -17,7 +17,7 @@ sequelize.authenticate()
     .catch(error => console.log(`Impossible de se connecter à la base de données ${error}`))
 
 const Item = ItemModel(sequelize, Datatypes)
-
+/*
 const initDb = () => {
     sequelize.sync({force: true })
     .then(_ => {
@@ -34,4 +34,9 @@ const initDb = () => {
 
 module.exports = {
     initDb, Item
+}
+
+*/
+module.exports = {
+    Item
 }

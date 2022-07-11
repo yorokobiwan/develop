@@ -9,7 +9,7 @@ module.exports =(sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        types{
+        types: {
             type: DataTypes.STRING,
             allowNull : true,
             get() {
@@ -18,7 +18,8 @@ module.exports =(sequelize, DataTypes) => {
             set(types){
                 this.setDataValue('types', types.join())
             }
-        },{
+        }},
+        {
             timestamps: true,
             createdAt: 'created',
             updatedAt: false    
