@@ -11,6 +11,7 @@ npm install body-parser --save
 npm install sequelize --save
 #driver mariadb
 npm install maria-db --save
+*/
 
 
 const morgan = require('morgan')
@@ -19,13 +20,13 @@ const bodyParser = require('body-parser')
 const { Sequelize, DataTypes } = require('sequelize')
 
 
-*/
 
-//let items = require('./mock-list')
+
+//let items = require('./db/mock-list')
 const ItemModel = require('./src/models/item')
 
 
-const items=[
+let items=[
     {
         id: 1,
         name : "bob" 
@@ -35,17 +36,18 @@ const items=[
         name : "ethan" 
     }
 ]
-
 const app = express()
 const port = 3000
 
-/*
+//const { success } = require('./helper')
+
 const sequelize = new Sequelize(
     'collection',
     'root',
-    '',
+    'root',
     {
         host: 'localhost',
+        port: 3306,
         dialect: 'mariadb',
         dialectOptions: {
             timezone: 'Etc/GMT-2'
@@ -58,9 +60,9 @@ const sequelize = new Sequelize(
 sequelize.authenticate()
     .then(_ => console.log('La connexion à la base de données a bien été établie.'))
     .catch(error => console.log(`Impossible de se connecter à la base de données ${error}`))
-*/
 
-const Item = ItemModel(sequelize, Datatypes)
+
+const Item = ItemModel(sequelize, DataTypes)
 
 sequelize.sync({force: true })
     .then(_ => {
@@ -74,17 +76,18 @@ sequelize.sync({force: true })
     })
 
 //middleware diy
+/*
 app.use((req, res, next) => {
     console.log(`URL : ${req.url}`)
     next()
 })
+*/
 
-/* middleware
 app
     .use(favicon(__dirname + '/favicon.ico'))
     .use(morgan('dev'))
     .use(bodyParser.json())
-*/
+
 
 app.get('/',(req,res) => res.send('Hello, Express 2!'))
 

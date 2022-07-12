@@ -1,7 +1,18 @@
+
 const carous= document.querySelector('.carousel');
 let sliders = [];
 
 let slideIndex = 0;
+
+
+const callDb = () => {
+     var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() { 
+    if (this.readyState == 4 && this.status == 200) { alert(this.responseText); } };
+        xhttp.open("GET", "http://localhost:3000/api/items", true);
+        xhttp.setRequestHeader("Content-type", "application/json");
+        xhttp.send(null); 
+}
 
 const createSlide = () =>{
     
@@ -45,6 +56,8 @@ const createSlide = () =>{
 
 }
 
+callDb()
+
 for (let i = 0; i < 3;i++){
     createSlide();
 }
@@ -59,11 +72,11 @@ const videoCards = document.querySelectorAll('.video-card');
 videoCards.forEach(item=> {
     item.addEventListener('mouseover', () => {
         let video = item.children[1];
-        video.play();
+        //video.play();
     })
     item.addEventListener('mouseleave', () => {
         let video = item.children[1];
-        video.pause();
+        //video.pause();
     })
 })
 

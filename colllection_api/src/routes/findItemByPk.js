@@ -1,7 +1,7 @@
-const { Item } = require('./db/sequelize')
+const { Item } = require('../db/sequelize')
 
 module.exports = (app) => {
-    app.get('api/items/:id', (req, res) => {
+    app.get('/api/items/:id', (req, res) => {
         Item.findByPk(req.params.id)
             .then(item => {
                 const message = 'L\'item a bien été récupérée.'

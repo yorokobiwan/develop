@@ -1,7 +1,7 @@
-const { Item } = require('./db/sequelize')
+const { Item } = require('../db/sequelize')
 
 module.exports = (app) => {
-    app.delete('api/items/:id', (req, res) => {
+    app.delete('/api/items/:id', (req, res) => {
         Item.findByPk(req.params.id).then(item => {
             if(item === null){
                 const message = `L\'item n'a pas pu être modifié. Réessayez dans quelques instants.`

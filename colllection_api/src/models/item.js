@@ -1,3 +1,4 @@
+const { DataTypes } = require('sequelize')
 module.exports =(sequelize, DataTypes) => {
     return sequelize.define('Item', {
         id: {
@@ -8,16 +9,6 @@ module.exports =(sequelize, DataTypes) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        types: {
-            type: DataTypes.STRING,
-            allowNull : true,
-            get() {
-                return this.getDataValue('types').split(',')
-            },
-            set(types){
-                this.setDataValue('types', types.join())
-            }
         }},
         {
             timestamps: true,

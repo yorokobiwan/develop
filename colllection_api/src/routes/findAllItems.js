@@ -1,7 +1,7 @@
-const { Item } = require('./db/sequelize')
+const { Item } = require('../db/sequelize')
 
 module.exports = (app) => {
-    app.get('api/items', (req, res) => {
+    app.get('/api/items', (req, res) => {
         Item.findAll()
             .then(items => {
                 const message = 'La liste des items a bien été récupérée.'

@@ -1,7 +1,7 @@
-const { Item } = require('./db/sequelize')
+const { Item } = require('../db/sequelize')
 
 module.exports = (app) => {
-    app.put('api/items/:id', (req, res) => {
+    app.put('/api/items/:id', (req, res) => {
         const id = req.params.id
         Item.update(req.body, {
             where: { id: id }

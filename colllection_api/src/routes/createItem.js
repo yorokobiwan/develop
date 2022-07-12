@@ -1,7 +1,7 @@
-const { Item } = require('./db/sequelize')
+const { Item } = require('../db/sequelize')
 
 module.exports = (app) => {
-    app.post('api/items', (req, res) => {
+    app.post('/api/items', (req, res) => {
         Item.create(req.body)
             .then(item => {
                 const message = `L\'item ${req.body.name} a bien été récupérée.`
