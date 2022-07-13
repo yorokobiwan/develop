@@ -4,15 +4,7 @@ let sliders = [];
 
 let slideIndex = 0;
 
-
-const callDb = () => {
-     var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() { 
-    if (this.readyState == 4 && this.status == 200) { alert(this.responseText); } };
-        xhttp.open("GET", "http://localhost:3000/api/items", true);
-        xhttp.setRequestHeader("Content-type", "application/json");
-        xhttp.send(null); 
-}
+console.log("movies="+movies.length);
 
 const createSlide = () =>{
     
@@ -29,6 +21,7 @@ const createSlide = () =>{
 
     // attaching all elements
     imgElement.appendChild(document.createTextNode(''));
+    
     h1.appendChild(document.createTextNode(movies[slideIndex].name));
     p.appendChild(document.createTextNode(movies[slideIndex].des));
     content.appendChild(h1);
@@ -56,7 +49,7 @@ const createSlide = () =>{
 
 }
 
-callDb()
+//callDb()
 
 for (let i = 0; i < 3;i++){
     createSlide();
