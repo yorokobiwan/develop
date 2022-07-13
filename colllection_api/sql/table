@@ -1,0 +1,54 @@
+CREATE TABLE `items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `des` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO `collection`.`items`
+(`name`,
+`des`,
+`image`)
+VALUES
+('Ambulance',
+'Un vétéran fait équipe avec son frère adoptif pour voler 32 millions de dollars.',
+'images/slide_ambulance.jpg');
+
+INSERT INTO `collection`.`items`
+(`name`,
+`des`,
+`image`)
+VALUES
+('Doctor Strange in the Multiverse of Madness',
+'',
+'images/doctor_strange_multiverse.jpg');
+
+INSERT INTO `collection`.`items`
+(`name`,
+`des`,
+`image`)
+VALUES
+('Once Upon a Time in Hollywood',
+'',
+'images/once_hollywood.jpg');
+
+INSERT INTO `collection`.`items`
+(`name`,
+`des`,
+`image`)
+VALUES
+('La Rage au Ventre',
+'Champion du monde de boxe, Billy Hope mène une existence fastueuse, son monde s écroule à la mort de sa femme.',
+'images/slide_southpaw.jpg');
+
+INSERT INTO `collection`.`items`
+(`name`,
+`des`,
+`image`)
+VALUES
+('luca',
+'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit porro et veniam excepturi, eaque voluptatem impedit nulla laboriosam facilis ut laboriosam libero!',
+'images/slider 5.PNG');
+
